@@ -8,7 +8,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/logos.png') }}">
     <!-- Bootstrap CSS -->
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" >
-    <link href="{{ asset('frontend/css/style1.css?ver=1.1') }}" rel="stylesheet" >
+    <link href="{{ asset('frontend/css/style1.css?ver=1.2') }}" rel="stylesheet" >
     <link href="{{ asset('frontend/css/font-awesome.min.css') }}" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css" integrity="sha512-ioRJH7yXnyX+7fXTQEKPULWkMn3CqMcapK0NNtCN8q//sW7ZeVFcbMJ9RvX99TwDg6P8rAH2IqUSt2TLab4Xmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -62,7 +62,7 @@ console.log("{{ Auth::user() }}")
 
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" ></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}" ></script>
-    <script src="{{ asset('js/frontend.js?ver=1.0.4') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.5') }}"></script>
 
 
 

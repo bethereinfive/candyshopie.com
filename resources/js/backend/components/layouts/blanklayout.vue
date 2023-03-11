@@ -63,7 +63,7 @@
   export default {
     created() {
                 this.createlink('frontend/css/bootstrap.min.css');
-        this.createlink('frontend/css/style.css?ver=1.1');
+        this.createlink('frontend/css/style.css?ver=1.2');
         this.createlink('frontend/css/font-awesome.min.css');
 
         this.createscript('frontend/js/bootstrap.bundle.min.js');
