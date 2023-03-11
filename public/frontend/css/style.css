@@ -589,7 +589,7 @@ input:focus {
 	padding: 10px;
 }
 .imagesection {
-	background: #3f7c10;
+	background: linear-gradient(90deg, #6c0023, #3e8d00);
 	padding-top: 10px;
 	background-size: 90%;
 	background-position: center;
