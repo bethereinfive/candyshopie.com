@@ -11,7 +11,7 @@
         </div>
 
         <h2 class="text-center" style="font-size:30px">Register</h2>
-        <h2 class="text-center mb-5">Zara Shop</h2>
+        <h2 class="text-center mb-5">Candy Shop</h2>
             <form @submit.prevent='register'>
                 <!-- <input type="text" v-model="form.country" placeholder="Please Your Country" required> -->
 

@@ -3385,7 +3385,7 @@ var render = function render() {
     }
   }, [_vm._v("Welcome")]), _vm._v(" "), _c("h2", {
     staticClass: "text-center mb-5"
-  }, [_vm._v("Zara Shop")]), _vm._v(" "), _c("form", {
+  }, [_vm._v("Candy Shop")]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
@@ -3520,7 +3520,7 @@ var render = function render() {
     }
   }, [_vm._v("Register")]), _vm._v(" "), _c("h2", {
     staticClass: "text-center mb-5"
-  }, [_vm._v("Zara Shop")]), _vm._v(" "), _c("form", {
+  }, [_vm._v("Candy Shop")]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
