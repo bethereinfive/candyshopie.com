@@ -28,10 +28,9 @@
            <p  class="money-style" :class="{ 'active':form.amount == 1000 }" @click="form.amount = 1000">1000</p>
            <p  class="money-style" :class="{ 'active':form.amount == 2000 }" @click="form.amount = 2000">2000</p>
            <p  class="money-style" :class="{ 'active':form.amount == 5000 }" @click="form.amount = 5000">5000</p>
-           <p  class="money-style" :class="{ 'active':form.amount == 10000 }" @click="form.amount = 10000">10000</p>
+           <p  class="money-style" :class="{ 'active':form.amount == 8000 }" @click="form.amount = 8000">8000</p>
+           <p  class="money-style" :class="{ 'active':form.amount == 12000 }" @click="form.amount = 12000">12000</p>
            <p  class="money-style" :class="{ 'active':form.amount == 25000 }" @click="form.amount = 25000">25000</p>
-           <p  class="money-style" :class="{ 'active':form.amount == 100000 }" @click="form.amount = 100000">100000</p>
-           <p  class="money-style" :class="{ 'active':form.amount == 300000 }" @click="form.amount = 300000">300000</p>
            <!-- <p  class="money-style active">Custom</p> -->
         </div>
        <div class="text-center">
