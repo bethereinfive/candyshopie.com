@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>::Zara Shop::</title>
+    <title>Candy Shop</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/logos.png') }}">
@@ -52,7 +52,7 @@
 
 
 
-<script src="{{ asset('js/backend.js?ver=1.0.6') }}"></script>
+<script src="{{ asset('js/backend.js?ver=1.0.0') }}"></script>
 
 
 
