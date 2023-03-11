@@ -1,19 +1,16 @@
 <?php
 namespace App\Http\Controllers;
-use Carbon\Carbon;
-use App\Models\Plan;
-use App\Models\Task;
-use App\Models\User;
-use App\Models\Level;
 use App\Models\Deposit;
 use App\Models\Gateway;
+use App\Models\Level;
+use App\Models\Plan;
 use App\Models\Transition;
-use Illuminate\Support\Str;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\File;
-
 class DepositController extends Controller
 {
 
@@ -48,8 +45,6 @@ class DepositController extends Controller
 
     public function paymentwebhook(Request $request)
     {
-
-
 
           $apiResponse =  $request->all();
           Log::info($apiResponse);
@@ -190,10 +185,10 @@ setInterval(function(){
         if ($status == 'approved') {
         $userid = $deposit->user_id;
         $methodid = $deposit->method;
-          $user = User::find($userid);
+        $user = User::find($userid);
         $DPamount =  $deposit->amount;
 
-         $todayCompleted =  Task::where(['user_id'=>$userid])->whereDate('created_at', Carbon::today())->count();
+
 
 
         $levelOneCommisition =  levelCommistion('Level1', $DPamount);
@@ -201,7 +196,7 @@ setInterval(function(){
         $levelThreeCommisition =  levelCommistion('Level3', $DPamount);
         if ($user->ref_by) {
             $LevelOneUser = User::where(['username' => $user->ref_by])->first();
-            // $depositCount = Deposit::where(['user_id'=>$LevelOneUser->id,'status'=>'approved'])->count();
+            $depositCount = Deposit::where(['user_id'=>$LevelOneUser->id,'status'=>'approved'])->count();
             // if($depositCount>0){
             $LevelOneNewBalance = balanceIncrease($LevelOneUser->balance, $levelOneCommisition);
             transitionCreate($LevelOneUser->id,$levelOneCommisition,0,$levelOneCommisition,'increase',$deposit->trx,'refer_commisition','');
@@ -210,10 +205,10 @@ setInterval(function(){
                 'balance' => $LevelOneNewBalance,
                 'plan_id' => planId($LevelOneNewBalance),
             ]);
-        // }
+            // }
             if ($LevelOneUser->ref_by) {
                 $LevelTwoUser = User::where(['username' => $LevelOneUser->ref_by])->first();
-                // $depositCount = Deposit::where(['user_id'=>$LevelTwoUser->id,'status'=>'approved'])->count();
+                $depositCount = Deposit::where(['user_id'=>$LevelTwoUser->id,'status'=>'approved'])->count();
                 // if($depositCount>0){
                 $LevelTwoNewBalance = balanceIncrease($LevelTwoUser->balance, $levelTwoCommisition);
                 transitionCreate($LevelTwoUser->id,$levelTwoCommisition,0,$levelTwoCommisition,'increase',$deposit->trx,'refer_commisition','');
@@ -225,7 +220,7 @@ setInterval(function(){
             // }
                 if ($LevelTwoUser->ref_by) {
                     $LevelThreeUser = User::where(['username' => $LevelTwoUser->ref_by])->first();
-                    // $depositCount = Deposit::where(['user_id'=>$LevelThreeUser->id,'status'=>'approved'])->count();
+                    $depositCount = Deposit::where(['user_id'=>$LevelThreeUser->id,'status'=>'approved'])->count();
                     // if($depositCount>0){
                     $LevelThreeNewBalance = balanceIncrease($LevelThreeUser->balance, $levelThreeCommisition);
                     transitionCreate($LevelThreeUser->id,$levelThreeCommisition,0,$levelThreeCommisition,'increase',$deposit->trx,'refer_commisition','');
@@ -247,23 +242,10 @@ setInterval(function(){
                 'plan_id' => planId($amount),
                 'balance' => $amount,
             ]);
-
-            $user = User::find($userid);
-
-            $plan_id = $user->plan_id;
-             $totalorder = Plan::find($plan_id)->totalorder-$todayCompleted;
-          $user->update([
-           'task' => $totalorder,
-            ]);
-
         }
-
-
-
         transitionCreate($userid,$amount,0,$amount,'increase',$deposit->trx,'rechage','');
     }
-         $deposit->update(['status' => $status]);
-
+        return $deposit->update(['status' => $status]);
     }
     /**
      * Show the form for creating a new resource.
@@ -283,7 +265,7 @@ setInterval(function(){
     public function store(Request $request)
     {
         $method = $request->method;
-        $methodData = Gateway::where(['name' => $method])->first();
+        $methodData = Gateway::find($method);
         $data = $request->all();
         $date = date("Y-m-d");
 

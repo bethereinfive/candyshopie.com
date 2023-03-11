@@ -85,7 +85,7 @@
           <div class="col-md-12">
             <!-- <h3 class="text-center">Our Partners</h3> -->
             <!-- <hr> -->
-            <!-- <img width="100%" :src="$asseturl+'frontend/img/partners.jpeg'" alt=""> -->
+            <img width="100%" :src="$asseturl+'frontend/img/partners.jpeg'" alt="">
           </div>
 
         </div>

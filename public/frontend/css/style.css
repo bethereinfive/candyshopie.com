@@ -589,11 +589,12 @@ input:focus {
 	padding: 10px;
 }
 .imagesection {
-	background: url(../img/bg1.png) no-repeat;
+	background: #3f7c10;
 	padding-top: 10px;
 	background-size: 90%;
 	background-position: center;
-	margin-top: 8px;
+    width: 80%;
+    margin: 0 auto;
 }
 .imagesection p {
 	color: hsla(0,0%,100%,.6);

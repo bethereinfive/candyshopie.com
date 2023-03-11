@@ -188,7 +188,7 @@ export default {
 
 
 
-        if(User.dateformat()[9]<=15){
+        if(User.dateformat()[9]<=14){
             if(User.dateformat()[9]>=10){
 
                 setTimeout(() => {
@@ -198,14 +198,14 @@ export default {
                     }
                 }, 5000);
             }else{
-            alert('প্রত্যাহার সময় সকাল ১০:০০ থেকে বিকাল ০৪:০০ টা পর্যন্ত')
+            alert('প্রত্যাহার সময় সকাল ১০টা থেকে বিকাল ৩টা পর্যন্ত')
 
                 this.$router.push({ name: 'Useraccount' });
 
 
             }
         }else{
-            alert('প্রত্যাহার সময় সকাল ১০:০০ থেকে বিকাল ০৪:০০ টা পর্যন্ত')
+            alert('প্রত্যাহার সময় সকাল ১০টা থেকে বিকাল ৩টা পর্যন্ত')
             this.$router.push({ name: 'Useraccount' });
 
         }
@@ -238,7 +238,7 @@ export default {
     justify-content: space-between;
     margin: 10px 23px;
     font-size: 19px;
-    background: #A1633E;
+    background: #E02A65;
     padding: 7px 11px;
     color: white;
 }

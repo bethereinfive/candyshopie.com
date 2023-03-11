@@ -119,7 +119,7 @@ button.money-btn {
     padding: 1px 20px;
     margin: 11px 0px;
     font-size: 23px;
-    background: #A1633E;
+    background: #E02A65;
     color: white;
     width: 100%;
     border-radius: 21px;
